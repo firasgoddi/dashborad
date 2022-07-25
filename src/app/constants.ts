@@ -1,0 +1,1 @@
+const appUrl:string ="http://104.225.221.31:9100";

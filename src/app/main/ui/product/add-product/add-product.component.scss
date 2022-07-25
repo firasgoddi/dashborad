@@ -1,0 +1,12 @@
+button {
+    &.image {
+     background-color: transparent;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center center;
+    }
+  }
+.imagePreview{
+  max-width: 200px;
+  max-height: 400px;
+  }

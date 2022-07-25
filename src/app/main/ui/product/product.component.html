@@ -1,0 +1,54 @@
+
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+   
+
+          
+
+      
+      
+      <div class="h1">
+          Liste des produits
+          
+      </div>
+      <div class="content p-24"  >
+        
+        <button mat-raised-button color="primary" [routerLink]="['/ui/addProduct']">Ajouter un nouveau produit</button>
+      
+        
+      
+
+
+        </div>
+      <div class="content" fxLayout="row wrap" fxLayoutGap="30px grid" >
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let p of products" >
+          <mat-card class="mat-elevation-z4" >
+            <mat-card-header>
+              <mat-card-title> {{p.nameEN}}</mat-card-title>
+         
+              <button mat-button [routerLink]="['/ui/deleteProduct',p.id]" >Modifier</button>
+            </mat-card-header>
+            <div *ngIf="p.image!=null; else elseBlock">
+              <img mat-card-image src="{{p.image.uploadDir}}" style="max-height: 150px;" class="img-responsive">
+            </div>
+<ng-template #elseBlock><img mat-card-image src=""style="max-height: 150px;" class="img-responsive"></ng-template>
+        
+            <mat-card-content>
+              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button [routerLink]="['/ui/productDetail',p.id]" >Details</button>
+              <button mat-button (click)="ondelete(p.id)">Supprimer</button>
+              <button mat-button (click)="openDialog(p.id)">Modifier</button>
+              
+              
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+        
+      </div>
+    </div>

@@ -1,0 +1,44 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+
+      <div class="h1">
+          Projets
+          
+      </div>
+      <button mat-raised-button color="primary" [routerLink]="['/ui/addprojet']">Ajouter nouveau projet</button>
+
+       
+        <table *ngIf="projets" mat-table  [dataSource]="projets"mat-elevation-z8>
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <mat-cell  *matCellDef="let projets">{{projets.id}} </mat-cell>            
+                
+              </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="nomprojet">
+              <th mat-header-cell *matHeaderCellDef> Nom Projet </th>
+              <td mat-cell  >{{projets.nomprojet}}  </td>
+            </ng-container>
+          
+            
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+
+      </div>
+
+  
+  <!-- / CONTENT -->
+
+</div>

@@ -1,0 +1,11 @@
+<label id="example-radio-group-label"> Choose the right function</label>
+<mat-radio-group
+  aria-labelledby="example-radio-group-label"
+  class="example-radio-group"
+  [(ngModel)]="Privelege">
+  <mat-radio-button class="example-radio-button" *ngFor="let season of Listofprivelege" [value]="season">
+    {{season}}
+  </mat-radio-button>
+</mat-radio-group>
+<button mat-raised-button color="primary">Confirmed</button>
+<div> {{Privelege}}</div> 

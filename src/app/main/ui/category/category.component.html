@@ -1,0 +1,39 @@
+
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+   
+
+          
+
+      
+      
+      <div class="h1">
+         Liste des catégories
+          
+      </div>
+      <div class="content p-24"  >
+        
+        <button mat-raised-button color="primary" [routerLink]="['/ui/addCategory']" >Ajouter un nouveau categorie</button>
+        </div>
+      <div class="content" fxLayout="row wrap" fxLayoutGap="30px grid" >
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let c of categorys" >
+          <mat-card class="mat-elevation-z4" >
+            <mat-card-header>
+              <mat-card-title> {{c.nameFR}}</mat-card-title>
+            </mat-card-header>
+            
+            <mat-card-content>
+              
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-button (click)="openDialog(c.id);">Details</button>
+              <button mat-button (click)="ondelete(c.id)" >Supprimer</button>
+              <button mat-button (click)="openDialog2(c.id);">Modifier</button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>

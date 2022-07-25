@@ -1,0 +1,135 @@
+<div id="details" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content  ">
+
+      
+
+
+      <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+
+          <!-- REACTIVE FORM EXAMPLE -->
+
+          <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start"
+                fxFlex="1 0 auto" [formGroup]="categoryForm" >
+
+                <div class="h2 mb-24">Catégorie Details</div>
+
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  
+                  <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                    <mat-label>Nom catégorie EN</mat-label>
+                    <input matInput formControlName="nameEN" >
+                    
+                    <mat-error>Name EN is required!</mat-error>
+                </mat-form-field>
+  
+                <mat-form-field appearance="outline" fxFlex="50" class="pl-4">
+                  <mat-label>Nom catégorie FR</mat-label>
+                  <input matInput formControlName="nameFR" >
+                  
+                
+                </mat-form-field>
+              
+                </div>
+  
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  
+                  <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                    <mat-label>descriptionEN</mat-label>
+                    <textarea matInput formControlName="descriptionEN" disabled></textarea>
+                    
+                </mat-form-field>
+                
+                
+                  <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                    <mat-label>descriptionFR</mat-label>
+                    <textarea matInput formControlName="descriptionFR" disabled></textarea>
+               
+                </mat-form-field>
+                
+  
+              </div>
+  
+              
+            
+  
+  
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  
+    <mat-form-field appearance="outline" fxFlex="50" class="pr-4"> 
+        <mat-label>harvest period EN </mat-label>
+        <input matInput formControlName="harvestperioden" disabled > 
+       
+       
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="50" class="pl-8"> 
+      <mat-label>harvest period FR</mat-label>
+      <input matInput formControlName="harvestperiodfr" > 
+ 
+  </mat-form-field>
+  
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  
+    <mat-form-field appearance="outline" fxFlex="100" class="pr-4"> 
+        <mat-label>location EN </mat-label>
+        <input matInput formControlName="locationen" disabled> 
+
+       
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="100" class="pl-8"> 
+      <mat-label>location EN </mat-label>
+      <input matInput formControlName="locationen"  > 
+
+     
+  </mat-form-field>
+               
+  
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  
+    <mat-form-field appearance="outline" fxFlex="100" class="pr-4"> 
+        <mat-label>status EN </mat-label>
+        <input matInput formControlName="statusEN" > 
+  
+       
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="100" class="pl-8"> 
+      <mat-label>status FR </mat-label>
+      <input matInput formControlName="statusFR" > 
+   
+     
+  </mat-form-field>
+               
+  
+  </div>
+  <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  
+    <mat-form-field appearance="outline" fxFlex="100" class="pr-4"> 
+        <mat-label>storage EN</mat-label>
+        <input matInput formControlName="storageen" > 
+   
+       
+    </mat-form-field>
+    <mat-form-field appearance="outline" fxFlex="100" class="pl-8"> 
+      <mat-label>storage FR</mat-label>
+      <input matInput  formControlName="storagefr" > 
+     
+     
+  </mat-form-field>
+               
+  
+  </div>
+  
+                
+  
+                
+           
+            </form>
+            </div>
+
+          
+          </div>
+</div>

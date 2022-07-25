@@ -1,0 +1,29 @@
+
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+   
+
+
+<div class="container">
+  <div class="messages">
+    <p
+      *ngFor="let m of message"
+    >
+      <i>{{m.sender}}</i> <br/> {{ m.message }}
+      <br>
+      <img mat-card-image src="" style="max-height: 100px;" class="img-responsive">
+    </p>
+  </div>
+
+  <div class="messageInput">
+    <input type="text" placeholder="enter a text message"  formControlName="message" />
+    <button (click)="sendMessage()">
+      Send
+    </button>
+  </div>
+</div>
+</div>
+</div>

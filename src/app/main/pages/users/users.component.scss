@@ -1,0 +1,47 @@
+:host {
+  .table{
+    width: 100px;
+  }
+    .content {
+
+        form {
+            width: 100%;
+            max-width: 800px !important;
+        }
+
+        .form-errors-model {
+            flex: 1;
+
+            code {
+                background: none !important;
+            }
+        }
+
+        .horizontal-stepper-wrapper,
+        .vertical-stepper-wrapper {
+            max-width: 800px;
+        }
+    }
+}
+.example-card {
+    max-width: 200px;
+    max-height: 100px;
+  
+   
+  }
+  
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  .content { 
+    padding: 30px; 
+ 
+  }
+  
+  .content > mat-card { 
+    width: 200px; 
+    
+  }
+  

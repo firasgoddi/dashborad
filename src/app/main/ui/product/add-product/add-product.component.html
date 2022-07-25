@@ -1,0 +1,158 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+
+    
+
+      <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+
+          <!-- REACTIVE FORM EXAMPLE -->
+
+          <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start"
+                fxFlex="1 0 auto"  [formGroup]="productForm" (ngSubmit)="submit()"   >
+
+              <div class="h2 mb-24">Ajouter une nouvelle produit</div>
+          
+  
+                <!-- Select File -->
+                <input type="file" name="avatar"accept="image/*" (change)="showPreview($event)"  />
+                <!--<button mat-raised-button  type="button" color="accent"(click)="onupload()" >Upload</button>-->
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                <!-- Image Preview --> 
+                <div class="imagePreview" *ngIf="imageURL && imageURL !== ''" >
+                  
+
+                </div>
+                </div>
+             
+                
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                  <mat-form-field appearance="outline" fxFlex="100" class="pr-4"> 
+                    <mat-label>Nom produit</mat-label>
+                    <input matInput formControlName="nameFR" > 
+                    <mat-error>nameFR invalid! </mat-error>
+                   
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" fxFlex="100" class="pl-8"> 
+                    <mat-label>nom produit EN</mat-label>
+                    <input matInput formControlName="nameEN" > 
+                    <mat-error>nameEN invalid! </mat-error>
+                   
+                  </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                  <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                    <mat-label>descriptionEN</mat-label>
+                    <textarea matInput formControlName="descriptionEN"></textarea>
+                    <mat-error>descriptionEN required!</mat-error>
+                </mat-form-field>
+                
+                
+                  <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                    <mat-label>descriptionFR</mat-label>
+                    <textarea matInput formControlName="descriptionFR"></textarea>
+                    <mat-error>descriptionFR required!</mat-error>
+                </mat-form-field>
+                
+  
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                <mat-form-field appearance="outline" fxFlex="50" class="pr-4"> 
+                    <mat-label>palet Fr </mat-label>
+                    <input matInput    formControlName="paletFR"> 
+              
+                   
+                </mat-form-field>
+                <mat-form-field appearance="outline" fxFlex="50" class="pl-8"> 
+                  <mat-label>palet EN</mat-label>
+                  <input matInput    formControlName="paletEN" > 
+              
+                 
+              </mat-form-field>
+              
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+              
+                <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+                    <mat-label>boxpalet </mat-label>
+                    <input matInput  formControlName="boxpalet" required> 
+              
+                   
+                </mat-form-field>
+                
+                 
+               
+              
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+                    <mat-label>grosweightpalet </mat-label>
+                    <input matInput   formControlName="grosweightpalet" required> 
+                   
+                   
+                </mat-form-field>
+               
+              
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+              <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+                <mat-label>heightpalet</mat-label>
+                <input matInput    formControlName="heightpalet"  required> 
+              
+               
+              </mat-form-field>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+                  <mat-label>netweightpalet</mat-label>
+                  <input matInput   formControlName="netweightpalet" required> 
+              
+                 
+                </mat-form-field>
+                </div>
+                <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                  <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+                    <mat-label>palet 20</mat-label>
+                    <input matInput   formControlName="palet20" required> 
+                    
+                  
+                  </mat-form-field>
+                  </div>
+                  
+      <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+        <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+          <mat-label>palet 40</mat-label>
+          <input matInput placeholder="palet40" formControlName="palet40" required> 
+    
+         
+        </mat-form-field>
+        </div>
+        <div   fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+        <mat-form-field appearance="fill"  fxFlex="100" class="pr-8">
+          
+          <mat-select   required formControlName="cat">
+            <mat-option  *ngFor="let c of category"  [value]="c.id">{{c.nameFR}}</mat-option>
+            
+          </mat-select>
+         <mat-error>missing !</mat-error>
+        </mat-form-field>
+   
+      </div>
+           
+
+                
+              <button mat-raised-button (click)="openSnackBar('Ajout avec succes','fermer') " type="submit" color="accent" >
+                Ajouter
+            </button>
+          </form>
+          </div>
+          </div>
+</div>

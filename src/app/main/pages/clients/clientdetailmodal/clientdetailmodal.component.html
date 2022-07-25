@@ -1,0 +1,52 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+
+      <div class="h1" style=" text-align: center;font-size: xx-large;">
+         Clients details
+      </div>
+      <br>
+      <br>
+      <form [formGroup]="detailclient" (ngSubmit)="submit()">
+      <div class="row">
+      <div fxFlex="1 0 auto" fxLayout="row">
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label  >Nom et prenom</mat-label>
+          <input matInput formControlName="fullname"  >
+         
+      </mat-form-field>
+    </div>
+      </div>
+    <div class="row">
+      <div fxFlex="1 0 auto" fxLayout="row">
+        <mat-form-field appearance="outline" fxFlex="100">
+          <mat-label  >Pays</mat-label>
+          <input matInput formControlName="country"  >
+          
+      </mat-form-field>
+    </div>
+        </div>  
+        <div class="row">
+          <div fxFlex="1 0 auto" fxLayout="row">
+            <mat-form-field appearance="outline" fxFlex="100">
+              <mat-label  >email</mat-label>
+              <input matInput formControlName="email"  >
+              
+          </mat-form-field>
+        </div>
+            </div>  
+            <div class="row">
+              <div fxFlex="1 0 auto" fxLayout="row">
+                <mat-form-field appearance="outline" fxFlex="100">
+                  <mat-label  >telephone</mat-label>
+                  <input matInput formControlName="phone"  >
+                  
+              </mat-form-field>
+            </div>
+                </div>  
+              </form>
+        </div>
+        </div>
+      

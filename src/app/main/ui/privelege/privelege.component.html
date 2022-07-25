@@ -1,0 +1,81 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+
+      <div class="h1">
+          Priveleges
+          
+      </div>
+      <button mat-raised-button color="primary" [routerLink]="['/ui/addPrivelege']">Ajouter nouveau privelege</button>
+
+       
+        <table *ngIf="priveleges" mat-table  [dataSource]="priveleges" mat-elevation-z8>
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <mat-cell   *matCellDef="let priveleges">{{priveleges.id}}</mat-cell>            
+                
+              </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef > Name </th>
+              <td mat-cell *matCellDef="let priveleges" > {{priveleges.name}} </td>
+            </ng-container>
+    <!-- Name Column -->
+    <ng-container matColumnDef="gestionActivite">
+      <th mat-header-cell *matHeaderCellDef > gestionActivite </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionActivite}} </td>
+    </ng-container>
+   
+          
+    <ng-container matColumnDef="gestionCategory">
+      <th mat-header-cell *matHeaderCellDef > gestionCategory </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionCategory}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gestionCompte">
+      <th mat-header-cell *matHeaderCellDef> gestionCompte </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionCompte}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gestionDisscusion">
+      <th mat-header-cell *matHeaderCellDef> gestionDisscusion </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionDisscusion}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gestionMarque">
+      <th mat-header-cell *matHeaderCellDef> gestionMarque </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionMarque}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gestionUser">
+      <th mat-header-cell *matHeaderCellDef> gestionUser </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionUser}} </td>
+    </ng-container>
+    <ng-container matColumnDef="gestionProduit">
+      <th mat-header-cell *matHeaderCellDef> gestionProduit </th>
+      <td mat-cell *matCellDef="let priveleges" > {{priveleges.gestionProduit}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="">
+ <button>       
+<mat-icon aria-hidden="false" aria-label="Example home icon" (click)="ondelete(priveleges.id)">delete</mat-icon>
+</button>
+       </td>
+    </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+          
+          
+
+      </div>
+
+  
+  <!-- / CONTENT -->
+
+</div>

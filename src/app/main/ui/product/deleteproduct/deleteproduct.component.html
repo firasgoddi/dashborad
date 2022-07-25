@@ -1,0 +1,152 @@
+<div id="forms" class="page-layout simple fullwidth" fxLayout="column">
+
+   
+  <!-- CONTENT -->
+  <div class="content p-24">
+
+      <div class="h1">
+         Add new Product
+      </div>
+
+      <div class="mb-24" fxLayout="column" fxLayoutAlign="start" fxLayout.gt-md="row">
+
+  <form class="mat-card mat-elevation-z4 p-24 mr-24" fxLayout="column" fxLayoutAlign="start"
+  fxFlex="1 0 auto"  [formGroup]="productForm" (ngSubmit)="update()"  >
+
+          <!-- REACTIVE FORM EXAMPLE -->
+    <div class="h2 mb-24">Modifier les détails d'un produit</div>
+
+
+              <div  fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+                
+                <mat-form-field appearance="outline" fxFlex="50" class="pr-4">
+                  <mat-label>Name Product EN</mat-label>
+                  <input matInput     formControlName="nameEN" >
+                  
+                  <mat-error>Name Product EN is required!</mat-error>
+              </mat-form-field>
+
+              <mat-form-field   appearance="outline" fxFlex="50" class="pl-4">
+                <mat-label>Name Product FR</mat-label>
+                <input matInput  formControlName="nameFR" >
+                
+                <mat-error>Name ProductFR is required!</mat-error>
+              </mat-form-field>
+            
+              </div>
+
+              <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+                <mat-form-field appearance="outline" fxFlex="100" class="pr-4">
+                  <mat-label>descriptionEN</mat-label>
+                  <textarea matInput  formControlName="descriptionEN"  ></textarea>
+                  <mat-error>descriptionEN required!</mat-error>
+              </mat-form-field>
+              
+              
+                <mat-form-field appearance="outline" fxFlex="100" class="pl-4">
+                  <mat-label>descriptionFR</mat-label>
+                  <textarea matInput  formControlName="descriptionFR" ></textarea>
+                  <mat-error>descriptionFR required!</mat-error>
+              </mat-form-field>
+              
+
+            </div>
+
+            
+          
+
+
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+  <mat-form-field appearance="outline" fxFlex="50" class="pr-4"> 
+      <mat-label>palet Fr </mat-label>
+      <input matInput  formControlName="paletFR"   > 
+      <mat-error>paletFR invalid! </mat-error>
+     
+  </mat-form-field>
+  <mat-form-field appearance="outline" fxFlex="50" class="pl-8"> 
+    <mat-label>palet EN</mat-label>
+    <input matInput  formControlName="paletEN"  > 
+    <mat-error>paletEN invalid! </mat-error>
+   
+</mat-form-field>
+
+</div>
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+  <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+      <mat-label>boxpalet </mat-label>
+      <input matInput formControlName="boxpalet"  > 
+      <mat-error>boxpalet invalid! </mat-error>
+     
+  </mat-form-field>
+  
+   
+ 
+
+</div>
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+
+  <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+      <mat-label>grosweightpalet </mat-label>
+      <input matInput formControlName="grosweightpalet" > 
+      <mat-error>grosweightpalet invalid! </mat-error>
+     
+  </mat-form-field>
+ 
+
+</div>
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+<mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+  <mat-label>heightpalet</mat-label>
+  <input matInput  formControlName="heightpalet"   > 
+  <mat-error>heightpalet invalid! </mat-error>
+ 
+</mat-form-field>
+</div>
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+    <mat-label>netweightpalet</mat-label>
+    <input matInput formControlName="netweightpalet"  > 
+    <mat-error>netweightpalet invalid! </mat-error>
+   
+  </mat-form-field>
+  </div>
+<div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+  <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+    <mat-label>palet20</mat-label>
+    <input matInput   formControlName="palet20" > 
+    <mat-error>palet20 invalid! </mat-error>
+   
+  </mat-form-field>
+  </div>
+  
+    
+      <div fxLayout="row" fxLayoutAlign="start center" fxFlex="1 0 auto">
+        <mat-form-field appearance="outline" fxFlex="100" class="pr-8"> 
+          <mat-label>palet40</mat-label>
+          <input matInput   formControlName="palet40"  > 
+          <mat-error>palet40 invalid! </mat-error>
+         
+        </mat-form-field>
+        </div>
+      
+    
+         
+          <mat-card-actions>
+           
+            <button mat-button type="submit" color="accent" >Modifier</button>
+            
+            
+          </mat-card-actions>
+              
+          
+  </form>
+          </div>
+          </div>
+        
+          
+          
+        
+</div>

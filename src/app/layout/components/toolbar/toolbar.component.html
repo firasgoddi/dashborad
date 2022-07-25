@@ -1,0 +1,106 @@
+<mat-toolbar class="p-0 mat-elevation-z1">
+
+    <div fxFlex fxFill fxLayout="row" fxLayoutAlign="start center">
+
+        <div fxFlex="1 0 auto" fxLayout="row" fxLayoutAlign="start center">
+
+            <button mat-icon-button class="navbar-toggle-button"
+                    *ngIf="!hiddenNavbar && !rightNavbar" (click)="toggleSidebarOpen('navbar')" fxHide.gt-md>
+                <mat-icon class="secondary-text">menu</mat-icon>
+            </button>
+
+            <div class="toolbar-separator" *ngIf="!hiddenNavbar && !rightNavbar" fxHide.gt-md></div>
+
+            <div fxLayout="row" fxLayoutAlign="start center" *ngIf="horizontalNavbar">
+                <div class="logo ml-16">
+                    <img class="logo-icon" src="assets/images/logos/fuse.svg">
+                </div>
+            </div>
+
+           
+
+        </div>
+
+        <div class="" fxFlex="0 1 auto" fxLayout="row" fxLayoutAlign="start center">
+
+          
+
+            <fuse-search-bar (input)="search($event)"></fuse-search-bar>
+
+            <div class="toolbar-separator"></div>
+
+            <button mat-button fxHide fxShow.gt-xs
+                    class="language-button"
+                    [matMenuTriggerFor]="languageMenu">
+                <div fxLayout="row" fxLayoutAlign="center center">
+                    <img class="flag mr-8" [src]="'assets/icons/flags/'+selectedLanguage.flag+'.png'">
+                    <span class="iso text-uppercase">{{selectedLanguage.id}}</span>
+                </div>
+            </button>
+
+            <mat-menu #languageMenu="matMenu" [overlapTrigger]="false">
+
+                <button mat-menu-item *ngFor="let lang of languages" (click)="setLanguage(lang)">
+                    <span fxLayout="row" fxLayoutAlign="start center">
+                        <img class="flag mr-16" [src]="'assets/icons/flags/'+lang.flag+'.png'">
+                        <span class="iso">{{lang.title}}</span>
+                    </span>
+                </button>
+            </mat-menu>
+
+            <div class="toolbar-separator" fxHide fxShow.gt-xs></div>
+
+            <button mat-icon-button fxHide.gt-md
+                    class="chat-panel-toggle-button"
+                    (click)="toggleSidebarOpen('chatPanel')"
+                    aria-label="Toggle chat panel">
+                <mat-icon class="secondary-text">chat</mat-icon>
+            </button>
+
+            <div class="toolbar-separator" fxHide.gt-md></div>
+
+           
+           
+			 <div class="toolbar-separator"></div>
+			   <button *ngIf="!user" mat-button class="user-button"  (click)="gotoConnectPage()">
+			  <div *ngIf="!user" fxLayout="row" fxLayoutAlign="center center" [dir]="dir" (click)="gotoConnectPage()">
+                	<img class="avatar mr-0 mr-sm-16" src="assets/images/avatars/no-profile-picture.jpg">
+                    <span class="username mr-12" fxHide fxShow.gt-sm> {{ 'TOOLBAR.CONNECT' | translate }}</span>
+                    
+                </div>
+                </button>
+			  <button *ngIf="user" mat-button [matMenuTriggerFor]="userMenu"
+                    class="user-button">
+                <div *ngIf="user" fxLayout="row" fxLayoutAlign="center center">
+                    <img class="avatar mr-0 mr-sm-16" *ngIf="user.avatar" [src]="prepareLink()">
+                    <img class="avatar mr-0 mr-sm-16" *ngIf="!user.avatar" src="assets/images/avatars/no-profile-picture.jpg">
+                    <span class="username mr-12" fxHide fxShow.gt-sm>{{user.firstName}}   {{user.lastName}}</span>
+                    <mat-icon class="s-16" fxHide.xs>keyboard_arrow_down</mat-icon>
+                </div>                 
+            </button>
+
+            <mat-menu  #userMenu="matMenu" [overlapTrigger]="false">
+
+                <button mat-menu-item (click)="goToPage('profile')">
+                    <mat-icon>account_circle</mat-icon>
+                    <span>My Profile</span>
+                </button>
+
+                <button mat-menu-item class="" (click)="goToPage('mail')">
+                    <mat-icon>mail</mat-icon>
+                    <span>Inbox</span>
+                </button>
+
+                <button mat-menu-item class="" (click)="logout()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span>Logout</span>
+                </button>
+
+            </mat-menu>
+
+         
+        </div>
+
+    </div>
+
+</mat-toolbar>

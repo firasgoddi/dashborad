@@ -1,0 +1,16 @@
+export interface category{
+    id?:number,
+    nameFR ?:String,
+    descriptionEN ?: String, 
+    descriptionFR ?:String, 
+    harvestperioden ?:String,
+    harvestperiodfr ?: String,
+    locationen ?: String,
+    locationfr ?: String,
+    nameEN?: String,
+    statusEN ?: String,
+    statusFR?: String,
+    storageen ?: String,
+    storagefr ?: String, 
+    marque_id ?:number,
+}
